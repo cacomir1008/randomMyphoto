@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>やる気スイッチ</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div id="rand"></div>
+</div>
+
+<button id="button">やる気スイッチ</button>
+<img id="myphoto" src="2.jpg" width=50%>
+<p id="test">Test</p>
+
+<style>
+    button{
+        border-radius: 10%;
+        box-shadow:5px 5px;
+        display:block;
+        margin:auto;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: pink;
+    }
+    #myphoto{
+        display:none;
+        display:block;
+        margin:auto;
+    }
+
+    p{
+        display:none
+    }
+</style>
+   <script>
+
+        $("#button").on("click",function(){
+            //同フォルダ内に1.jpg~5.jpgの5枚を用意
+            var t =rand(5);
+            const photourl = `${t}.jpg`;
+            const myphoto=document.querySelector('#myphoto')
+            myphoto.src = photourl
+
+            $("#myphoto").show(500)
+            $("#myphoto").hide(500)
+        })
+
+function rand(n){
+        var r = Math.floor(Math.random() *n +1);
+        return r;
+    }
+
+
+   </script> 
+</body>
+  
+</html>
